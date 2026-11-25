@@ -1,4 +1,4 @@
-# Project TARRAGON — original MSC processing pipeline
+# Original Project Processing Pipeline
 
 Original reference scripts for applying the volumetric, unnormalised Vogt–Bailey (VB) Index to the Midnight Scan Club (MSC, OpenNeuro ds000224) fMRIPrep derivatives. These are the **three original source scripts** supplied with the handover, preserved without editing; this README was added for GitHub.
 
