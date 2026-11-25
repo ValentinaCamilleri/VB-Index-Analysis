@@ -325,32 +325,3 @@ The denoising and VB calculation methodology remained consistent with the origin
 
 However, compatibility of the derivatives must be verified for each new processing batch. In particular, differences in BIDS naming conventions, directory structure, preprocessing versions and spatial references may require changes beyond simple path replacement.
 
----
-
-## 9. Source Preservation and Computational Considerations
-
-The scripts were designed to preserve the original AABC imaging downloads and previously generated pilot results.
-
-Preprocessing and downstream analyses write their outputs to separate project directories.
-
-The original V1 analysis was carried out under a reported home-directory quota of approximately 200 GB. Since fMRIPrep may generate substantial intermediate files, available disk space should be checked before initiating preprocessing.
-
-The memory limit specified for fMRIPrep does not increase the available filesystem quota.
-
-Temporary processing directories and intermediate outputs should only be removed after confirming that the required final derivatives have been generated and validated.
-
----
-
-## 10. Limitations and Reproducibility
-
-The scripts provided here represent the implementation used for the original AABC V1 pilot investigation. They are not a fully automated, dataset-independent pipeline.
-
-The downstream denoising and VB calculation methods follow the original MSC methodology, but the upstream preprocessing procedures may differ between datasets, visits and software versions.
-
-In particular, the V1 fMRIPrep v22.1.1 processing should not be assumed to be identical to the separately performed V2–V4 fMRIPrep v25.2.5 processing.
-
-Furthermore, successful script execution and the presence of output files do not, by themselves, establish the scientific validity or spatial reproducibility of the resulting VB maps. Appropriate image inspection, processing quality control and independent evaluation of spatial agreement remain necessary.
-
-This repository contains processing scripts, configuration files and methodological documentation. It does not include the original AABC imaging data, fMRIPrep derivatives or final VB maps.
-
-The scripts are shared to support reproducibility, methodological transparency and continuation of the AABC analysis across participants and longitudinal visits.
