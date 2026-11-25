@@ -1,4 +1,4 @@
-# TARRAGON Pilot — Test 2: AABC HCA8889115 V1, fMRIPrep → 36P → VB
+# Pilot Test Scripts
 
 ## Destination layout
 
@@ -60,9 +60,9 @@ The actual Pavie files and fMRIPrep module have not been tested by the assistant
 
 ## GitHub handover note (25 November 2026)
 
-These eight source files are the **original uploaded AABC HCA8889115 V1 pilot files**, retained unchanged, apart from this appended README note. They were configured for **the independently run V1 fMRIPrep 22.1.1 processing**, not the later V2–V4 visit processing from Atsushi's fMRIPrep 25.2.5 derivatives.
+These eight source files are the **original uploaded AABC HCA8889115 V1 pilot files**, retained unchanged, apart from this appended README note. They were configured for **the independently run V1 fMRIPrep 22.1.1 processing**, not the later V2–V4 visit processing from fMRIPrep 25.2.5 derivatives.
 
-To process other participants or visits, do **not** assume that changing one root path is sufficient. Check hardcoded participant/visit IDs, acquisition labels, BIDS entity patterns, expected manifests, FMRIPrep version and flags, and spatial transforms before running. `06_register_native_vb_to_MNI.sh` is a V1-specific comparison step and should be verified for each new spatial reference.
+To process other participants or visits, check hardcoded participant/visit IDs, acquisition labels, BIDS entity patterns, expected manifests, FMRIPrep version and flags, and spatial transforms before running. `06_register_native_vb_to_MNI.sh` is a V1-specific comparison step and should be verified for each new spatial reference.
 
 The preflight, 36P denoising and VB calculation scripts implement the same *downstream* scientific method as the original MSC TARRAGON scripts, with dataset-specific input/output adaptation. This does not imply identical upstream fMRIPrep processing across datasets/visits.
 
