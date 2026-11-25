@@ -1,0 +1,37 @@
+# HCA8889115 V1 | Test 2: fMRIPrep + 36P + unnormalised VB
+experiment:
+  name: AABC_HCA8889115_V1_fMRIPrep_VB
+  subject: HCA8889115
+  visit: V1
+paths:
+  results_root: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep
+  raw_functional: ~/TARRAGON/AABC/HCA8889115/Resting State fMRI Unprocessed
+  raw_structural: ~/TARRAGON/AABC/HCA8889115/Structural Unprocessed
+  bids_root: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep/BIDS/HCA8889115_V1
+  fmriprep_output: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep/HCA8889115/V1/fMRIPrep_output
+  work: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep/HCA8889115/V1/fMRIPrep_work
+  fmriprep_logs: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep/HCA8889115/V1/fMRIPrep_logs
+  denoising_and_vb_output: ~/TARRAGON/Pilot/Pilot_Results_fMRIPrep/HCA8889115/V1/fMRIPrep_VB
+fmriprep:
+  version: 22.1.1
+  nprocs: 20
+  omp_nthreads: 8
+  mem_mb: 100000
+  output_spaces: [func, T1w, MNI152NLin2009cAsym:res-2]
+  cifti_output: false
+  surface_reconstruction: true
+  anatomical_reference: default_single_V1_T1w
+runs: [REST1_AP, REST1_PA, REST2_AP, REST2_PA]
+denoising:
+  strategy: 36P
+  include_global_signal: true
+  high_pass_cutoff_period_sec: 128
+  first_row_derivative_nan_policy: zero_fill_expected_first_row_only
+  remove_initial_nonsteady_state_volumes: true
+  motion_scrubbing: false
+  spatial_smoothing_fwhm_mm: 0
+vb:
+  method: volumetric
+  laplacian: unnorm
+  neighbourhoods: [7, 27]
+  jobs: 1
