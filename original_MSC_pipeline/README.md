@@ -4,9 +4,9 @@ Original reference scripts for applying the volumetric, unnormalised Vogt–Bail
 
 ## Workflow
 
-1. `01_preflight_inventory.py` — discover/check fMRIPrep derivatives, masks, confounds and acquisition structure; produce `Scripts/reports/preflight_manifest.csv`.
-2. `02_denoise_36P.py` — 36-parameter nuisance regression and 128-second discrete-cosine high-pass filtering in a joint regression model; no added spatial smoothing; retain provenance and residual quality-control output.
-3. `03_run_vb_simple.py` — invoke `vb_tool volumetric` on denoised BOLD to produce unnormalised VB7 and VB27 maps; `--little-neighbourhood` selects VB7.
+1. `01_preflight_inventory.py` to discover/check fMRIPrep derivatives, masks, confounds and acquisition structure; produce `Scripts/reports/preflight_manifest.csv`.
+2. `02_denoise_36P.py` for 36-parameter nuisance regression and 128-second discrete-cosine high-pass filtering in a joint regression model; no added spatial smoothing; retain provenance and residual quality-control output.
+3. `03_run_vb_simple.py` - invoke `vb_tool volumetric` on denoised BOLD to produce unnormalised VB7 and VB27 maps; `--little-neighbourhood` selects VB7.
 
 ## Methodological details
 
